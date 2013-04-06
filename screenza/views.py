@@ -6,6 +6,8 @@ from django.template import Context
 
 import logging
 from django.views.decorators.csrf import csrf_exempt
+import uuid
+from share_app.settings import MEDIA_ROOT
 
 log = logging
 
@@ -32,10 +34,11 @@ def file_handler(request):
         file_size = wrapped_file.file.size
         log.info ('Got file: "%s"' % str(filename))
         log.info('Content type: "$s" % file.content_type')
-        handle_uploaded_file(file)
-        return HttpResponse('/media/1.png')
+        filename = '{0}.png'.format(uuid.uuid4())
+        handle_uploaded_file(file,filename)
+        return HttpResponse('/media/{0}'.format(filename))
 
-def handle_uploaded_file(f):
-    with open('D:/Work/Django/share_app/userfiles/1.png', 'wb+') as destination:
+def handle_uploaded_file(f, fname):
+    with open(MEDIA_ROOT+'/'+fname, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)

@@ -1,4 +1,5 @@
 # Django settings for share_app project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -50,7 +51,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = 'D:/Work/Django/share_app/userfiles/'
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..', 'userfiles')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
