@@ -1,2 +1,6 @@
 /.idea
 *.pyc
+/logs
+/static
+/media
+/django.wsgi

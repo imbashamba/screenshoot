@@ -5,16 +5,64 @@
     <script src="{% static "screenza/js/jquery.min.js" %}"></script>
 
     <script src="{% static "screenza/js/screenza.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static "screenza/css/screenza.css" %}">
 </head>
 <body>
-<div class="explain_div">
-    <div style="float:left;">Сервис для быстрого обмена скриншотами.<br>
-        Сделайте скриншот, а затем нажмите Ctrl+V<br>
-        Либо нажмите правой кнопкой - "Вставить" в сером квадрате =>
+<div class="logo">ScreenShoot</div>
+<div id="working_div">
+    <div class="explain_div">
+        <div class="text_desc">Сервис для быстрого обмена скриншотами.<br>
+            Сделайте скриншот, а затем нажмите Ctrl+V,<br>
+            либо правой кнопкой мыши - "Вставить" в сером квадрате =>
+        </div>
+        <div id="paste_area" contenteditable="true"></div>
+        <div style="clear:both"></div>
     </div>
-    <div id="paste_area" style="float:left; background-color: lightgrey; width: 100px; height: 100px" contenteditable="true"></div>
-    <div style="clear:both"></div>
 </div>
-    <div id = "link_holder"></div>
-    <div id = "main_holder"></div>
+
+<div id="result_div" class="result_div">
+    <div id = "link_holder">
+        <input id="link_box" type="text" size="100" value=""/>
+        <br>
+        <img id="result_img" src="" style="display: none;"/>
+    </div>
+    <div id="squaresWaveG">
+        <div id="squaresWaveG_1" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_2" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_3" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_4" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_5" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_6" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_7" class="squaresWaveG">
+        </div>
+        <div id="squaresWaveG_8" class="squaresWaveG">
+        </div>
+    </div>
+</div>
+
+<div id="not_supported" style="display: none;">
+    К сожалению ваш браузер не поддерживает все необходимые функции, установите Firefox или Chrome:
+    <br><a href="//affiliates.mozilla.org/link/banner/35723">
+    <img src="//affiliates.mozilla.org/media/uploads/banners/390c2a15f395e1e928ba474bae1b953ddfdd3e04.png" alt="Загрузить: Быстрый, Веселый, Умный" /></a>
+</div>
+<div id="footer">
+    <div id="footer_links">
+        <a href="https://github.com/imbashamba/screenshoot">source</a>
+    </div>
+</div>
+
+<script>
+    if($.browser.msie || $.browser.opera || $.browser.safari)
+    {
+        $('#working_div').hide();
+        $('#not_supported').show();
+    }
+</script>
 </body>
