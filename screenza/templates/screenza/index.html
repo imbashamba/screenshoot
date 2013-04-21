@@ -1,10 +1,17 @@
 <head>
     <title>ScreenShoot!</title>
+    <meta name="description" content="Передать скриншот через интернет без сохранения и загрузки файла.">
+    <meta name="keywords" content="скриншот, передать скриншот, закачать скриншот, отправить скриншот, показать скриншот">
     {% load staticfiles %}
 
     <script src="{% static "screenza/js/jquery.min.js" %}"></script>
 
     <script src="{% static "screenza/js/screenza.js" %}"></script>
+
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?92"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 3593622, onlyWidgets: true});
+    </script>
 
     <link rel="stylesheet" href="{% static "screenza/css/screenza.css" %}">
 </head>
@@ -53,6 +60,10 @@
     <img src="//affiliates.mozilla.org/media/uploads/banners/390c2a15f395e1e928ba474bae1b953ddfdd3e04.png" alt="Загрузить: Быстрый, Веселый, Умный" /></a>
 </div>
 <div id="footer">
+    <div id="vk_like"></div>
+    <script type="text/javascript">
+        VK.Widgets.Like("vk_like", {type: "full"});
+    </script>
     <div id="footer_links">
         <a href="https://github.com/imbashamba/screenshoot">source</a>
     </div>
