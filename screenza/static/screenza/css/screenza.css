@@ -37,14 +37,11 @@ width: 10px;
 #footer{
     width: 100%;
     bottom: 0;
-    position: absolute;
 }
 
 #footer_links{
-     bottom: 0;
+    float: right;
      color: grey;
-     position: absolute;
-     right: 0;
  }
 
 #footer a:visited, #footer a{
@@ -215,4 +212,8 @@ width: 10px;
         background-color:#1F1FED;
     }
 
+}
+
+vk_like{
+    float: left;
 }
